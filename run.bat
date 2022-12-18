@@ -1,0 +1,1 @@
+flask --app imageToSpeech --debug run
