@@ -26,7 +26,7 @@ def remove_noise(img):
     bg = cv2.morphologyEx(img, cv2.MORPH_DILATE, se)
     img = cv2.divide(img, bg, scale=255)
 
-    blurred = cv2.GaussianBlur(img, (0,0), sigmaX=5, sigmaY=5)
+    blurred = cv2.GaussianBlur(img, (3,3), sigmaX=5, sigmaY=5)
     img = cv2.addWeighted(img, 0.7, blurred, 0.3, 0)
 
     medianBlurred = cv2.medianBlur(img, 3)
